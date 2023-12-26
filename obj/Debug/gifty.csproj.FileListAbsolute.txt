@@ -1,0 +1,13 @@
+C:\Projects\VintageStory\Mods\gifty\bin\Debug\Mods\mod\modinfo.json
+C:\Projects\VintageStory\Mods\gifty\bin\Debug\Mods\mod\gifty.deps.json
+C:\Projects\VintageStory\Mods\gifty\bin\Debug\Mods\mod\gifty.dll
+C:\Projects\VintageStory\Mods\gifty\bin\Debug\Mods\mod\gifty.pdb
+C:\Projects\VintageStory\Mods\gifty\obj\Debug\gifty.csproj.AssemblyReference.cache
+C:\Projects\VintageStory\Mods\gifty\obj\Debug\gifty.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\VintageStory\Mods\gifty\obj\Debug\gifty.AssemblyInfoInputs.cache
+C:\Projects\VintageStory\Mods\gifty\obj\Debug\gifty.AssemblyInfo.cs
+C:\Projects\VintageStory\Mods\gifty\obj\Debug\gifty.csproj.CoreCompileInputs.cache
+C:\Projects\VintageStory\Mods\gifty\obj\Debug\gifty.dll
+C:\Projects\VintageStory\Mods\gifty\obj\Debug\refint\gifty.dll
+C:\Projects\VintageStory\Mods\gifty\obj\Debug\gifty.pdb
+C:\Projects\VintageStory\Mods\gifty\obj\Debug\ref\gifty.dll

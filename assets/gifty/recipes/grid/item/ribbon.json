@@ -1,0 +1,310 @@
+﻿[
+    {
+		ingredientPattern: " F WSW",
+		width: 3,
+		height: 2,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-black",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			},
+			"W": {
+				"type": "item",
+				"code": "game:stick",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:ribbon-black",
+			quantity: 2
+		}
+	},
+	{
+		ingredientPattern: " F WSW",
+		width: 3,
+		height: 2,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-blue",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			},
+			"W": {
+				"type": "item",
+				"code": "game:stick",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:ribbon-blue",
+			quantity: 2
+		}
+	},
+	{
+		ingredientPattern: " F WSW",
+		width: 3,
+		height: 2,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-brown",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			},
+			"W": {
+				"type": "item",
+				"code": "game:stick",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:ribbon-brown",
+			quantity: 2
+		}
+	},
+	{
+		ingredientPattern: " F WSW",
+		width: 3,
+		height: 2,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-gray",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			},
+			"W": {
+				"type": "item",
+				"code": "game:stick",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:ribbon-gray",
+			quantity: 2
+		}
+	},
+	{
+		ingredientPattern: " F WSW",
+		width: 3,
+		height: 2,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-green",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			},
+			"W": {
+				"type": "item",
+				"code": "game:stick",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:ribbon-green",
+			quantity: 2
+		}
+	},
+	{
+		ingredientPattern: " F WSW",
+		width: 3,
+		height: 2,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-orange",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			},
+			"W": {
+				"type": "item",
+				"code": "game:stick",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:ribbon-orange",
+			quantity: 2
+		}
+	},
+	{
+		ingredientPattern: " F WSW",
+		width: 3,
+		height: 2,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-pink",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			},
+			"W": {
+				"type": "item",
+				"code": "game:stick",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:ribbon-pink",
+			quantity: 2
+		}
+	},
+	{
+		ingredientPattern: " F WSW",
+		width: 3,
+		height: 2,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-purple",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			},
+			"W": {
+				"type": "item",
+				"code": "game:stick",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:ribbon-purple",
+			quantity: 2
+		}
+	},
+	{
+		ingredientPattern: " F WSW",
+		width: 3,
+		height: 2,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-red",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			},
+			"W": {
+				"type": "item",
+				"code": "game:stick",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:ribbon-red",
+			quantity: 2
+		}
+	},
+	{
+		ingredientPattern: " F WSW",
+		width: 3,
+		height: 2,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-white",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			},
+			"W": {
+				"type": "item",
+				"code": "game:stick",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:ribbon-white",
+			quantity: 2
+		}
+	},
+	{
+		ingredientPattern: " F WSW",
+		width: 3,
+		height: 2,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-yellow",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			},
+			"W": {
+				"type": "item",
+				"code": "game:stick",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:ribbon-yellow",
+			quantity: 2
+		}
+	}
+]

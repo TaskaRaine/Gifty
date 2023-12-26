@@ -1,0 +1,62 @@
+﻿{
+    "code": "paintbrush",
+	variantgroups: [
+		{ code: "metal", loadFromProperties: "block/metal" },
+	],
+	allowedVariants: [
+		"*-copper",
+		"*-cupronickel",
+		"*-tinbronze",
+		"*-bismuthbronze",
+		"*-blackbronze",
+		"*-iron",
+		"*-meteoriciron",
+		"*-steel",
+		"*-gold",
+		"*-silver"
+	],
+    creativeinventory: { "general": ["*"], "items": ["*"], "gifty": ["*"] },
+    attributes: {
+		displaycaseable: true, 
+		shelvable: true,
+		onDisplayTransform: {
+			rotation: { x: 0, y: -90, z: 0 },
+			origin: { x: 0.5, y: 0, z: 0.5 },
+			scale: 0.55
+		},
+		handbook: {
+			groupBy: ["paintbrush-*"]
+		},
+    },
+	drawtype: "json",
+	"shape": { "base": "item/paintbrush"},
+	"textures": {
+		"wood": { "base": "game:block/wood/debarked/oak" },
+		"band": { base: "game:block/metal/sheet/{metal}1" },
+		"bristles": { "base": "game:block/cloth/linen/white" }
+	},
+	damagedby: ["blockbreaking", "attacking"],
+	"tooltier":  1,
+	"attackpower": 0.5,
+	"durabilityByType": {
+		"*-gold": 12,
+		"*-silver": 12,
+		"*-copper": 25,
+		"*-blackbronze": 60,
+		"*-bismuthbronze": 50,
+		"*-tinbronze": 40,
+		"*-iron": 90,
+		"*-meteoriciron": 120,
+		"*-steel": 180
+	},
+	guiTransform: {
+		rotation: { x: 90, y: -46, z: 32 },
+		origin: { x: 0.5, y: -0, z: 0.5 },
+		scale: 2.55
+	},
+	fpHandTransform: {
+		rotation: { x: 55, y: -180, z: -64 },
+		origin: { x: 0.5, y: 0.3, z: 0.5 },
+		scale: 2.3
+	}
+}

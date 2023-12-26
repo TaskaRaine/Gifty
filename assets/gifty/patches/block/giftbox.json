@@ -1,0 +1,10 @@
+﻿[
+    {
+		"op": "replace",
+		"path": "/shapeByType/*-ribbon/base",
+		"value": "block/giftbox_lidded_ribbon_modified",
+		"file": "blocktypes/giftbox",
+		"side": "Server",
+		"condition": { "when": "UseThickRibbonGiftBoxModel", "isValue": "true" }
+	},
+]

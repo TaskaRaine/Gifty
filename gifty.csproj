@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>$(ProjectDir)\Projects\VintageStory\Mods\Debug\gifty</OutputPath>
+    <IntermediateOutputPath>..\..\obj\Debug\gifty\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>$(ProjectDir)\Projects\VintageStory\Debug\gifty</OutputPath>
+    <IntermediateOutputPath>..\..\obj\Release\gifty\</IntermediateOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="VintagestoryAPI">
+      <HintPath>$(VINTAGE_STORY)/VintagestoryAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VSSurvivalMod">
+      <HintPath>$(VINTAGE_STORY)/Mods/VSSurvivalMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSEssentials">
+      <HintPath>$(VINTAGE_STORY)/Mods/VSEssentials.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSCreativeMod">
+      <HintPath>$(VINTAGE_STORY)/Mods/VSCreativeMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(VINTAGE_STORY)/Lib/Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(VINTAGE_STORY)/Lib/0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="assets\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Remove="assets\gifty\blocktypes\giftbox.json" />
+    <None Remove="assets\gifty\blocktypes\giftbox_base.json" />
+    <None Remove="assets\gifty\blocktypes\giftbox_lid.json" />
+    <None Remove="assets\gifty\itemtypes\clothfragment.json" />
+    <None Remove="assets\gifty\itemtypes\paintbrush.json" />
+    <None Remove="assets\gifty\itemtypes\ribbon.json" />
+    <None Remove="assets\gifty\lang\en.json" />
+    <None Remove="assets\gifty\patches\block\giftbox.json" />
+    <None Remove="assets\gifty\recipes\grid\block\captainoatsbrother\giftbox.json" />
+    <None Remove="assets\gifty\recipes\grid\block\captainoatsbrother\lid.json" />
+    <None Remove="assets\gifty\recipes\grid\block\captainoats\giftbox.json" />
+    <None Remove="assets\gifty\recipes\grid\block\captainoats\lid.json" />
+    <None Remove="assets\gifty\recipes\grid\block\taska\giftbox.json" />
+    <None Remove="assets\gifty\recipes\grid\block\taska\lid.json" />
+    <None Remove="assets\gifty\recipes\grid\item\clothfragment.json" />
+    <None Remove="assets\gifty\recipes\grid\item\ribbon.json" />
+    <None Remove="assets\gifty\sounds\paperdrop.ogg" />
+    <None Remove="modinfo.json" />
+    <Content Include="modinfo.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="assets\gifty\textures\block\giftbox\taska\" />
+    <Folder Include="assets\gifty\textures\item\" />
+  </ItemGroup>
+
+</Project>

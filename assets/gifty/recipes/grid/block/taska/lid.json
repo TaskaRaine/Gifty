@@ -1,0 +1,19 @@
+﻿[
+    {
+		ingredientPattern: "PPP",
+		width: 3,
+		height: 1,
+		ingredients: {
+			"P": { 
+				type: "item", 
+				code: "game:paper-parchment",
+				quantity: 1
+			}
+		},
+		output: { 
+			type: "block", 
+			code: "gifty:giftboxlid-plain",
+			quantity: 1
+		}
+	}
+]

@@ -1,0 +1,38 @@
+﻿{
+    "game:tabname-gifty": "Gifty",
+
+    "designedby": "<font color=\"#99c9f9\"><i>Designed By: {0}</i></font>",
+
+    "block-giftboxlid-christmas_meatfest": "Meatfest Lid",
+    "block-giftboxlid-christmas_orangejam": "Orange Jam Lid",
+    "block-giftboxlid-christmas_purplejam": "Purple Jam Lid",
+    "block-giftboxlid-christmas_redjam": "Red Jam Lid",
+    "block-giftboxlid-halloween_cloth": "Spooky Cloth Lid",
+    "block-giftboxlid-halloween_pixelportal": "Pixel Portal Lid",
+
+    "block-giftboxlid-halloween_batmoon": "Bat Moon Lid",
+
+    "block-giftboxbase-christmas_meatfest": "Meatfest Gift Box",
+    "block-giftboxbase-christmas_orangejam": "Orange Jam Gift Box",
+    "block-giftboxbase-christmas_purplejam": "Purple Jam Gift Box",
+    "block-giftboxbase-christmas_redjam": "Red Jam Gift Box",
+    "block-giftboxbase-halloween_cloth": "Spooky Cloth Gift Box",
+    "block-giftboxbase-halloween_pixelportal": "Pixel Portal Gift Box",
+
+    "block-giftboxbase-halloween_batmoon": "Bat Moon Gift Box",
+
+    "block-giftbox-noribbon": "Gift Box",
+    "block-giftbox-ribbon": "Tied Gift Box",
+
+    "item-ribbon-black": "Black Ribbon",
+    "item-ribbon-blue": "Blue Ribbon",
+    "item-ribbon-brown": "Brown Ribbon",
+    "item-ribbon-gray": "Gray Ribbon",
+    "item-ribbon-green": "Green Ribbon",
+    "item-ribbon-orange": "Orange Ribbon",
+    "item-ribbon-pink": "Pink Ribbon",
+    "item-ribbon-purple": "Purple Ribbon",
+    "item-ribbon-red": "Red Ribbon",
+    "item-ribbon-white": "White Ribbon",
+    "item-ribbon-yellow": "Yellow Ribbon"
+}

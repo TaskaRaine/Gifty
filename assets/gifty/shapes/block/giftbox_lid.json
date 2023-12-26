@@ -1,0 +1,88 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 8,
+	"textureHeight": 8,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "Origin",
+			"from": [ 8.0, 0.0, 8.0 ],
+			"to": [ 9.0, 1.0, 9.0 ],
+			"rotationOrigin": [ 8.0, 0.0, 8.0 ],
+			"faces": {
+			},
+			"children": [
+				{
+					"name": "LidRoof",
+					"from": [ -2.5, 0.5, -2.5 ],
+					"to": [ 2.5, 1.0, 2.5 ],
+					"rotationOrigin": [ 0.0, 0.5, 0.0 ],
+					"rotationX": 180.0,
+					"faces": {
+						"up": { "texture": "#boxlid", "uv": [ 0.0, 0.0, 5.0, 5.0 ] },
+						"down": { "texture": "#boxlid", "uv": [ 0.0, 0.0, 5.0, 5.0 ] }
+					},
+					"children": [
+						{
+							"name": "EastLidWall",
+							"from": [ 5.0, -0.5, 0.0 ],
+							"to": [ 5.5, 0.5, 5.0 ],
+							"rotationOrigin": [ 4.5, -0.5, 0.0 ],
+							"faces": {
+								"east": { "texture": "#boxlid", "uv": [ 2.5, 7.0, 7.5, 8.0 ] },
+								"west": { "texture": "#boxlid", "uv": [ 2.5, 7.0, 7.5, 8.0 ] },
+								"up": { "texture": "#boxlid", "uv": [ 7.0, 0.0, 7.5, 5.0 ] },
+								"down": { "texture": "#boxlid", "uv": [ 7.0, 0.0, 7.5, 5.0 ] }
+							}
+						},
+						{
+							"name": "WestLidWall",
+							"from": [ -0.5, -0.5, 0.0 ],
+							"to": [ 0.0, 0.5, 5.0 ],
+							"rotationOrigin": [ -0.5, -0.5, 0.0 ],
+							"faces": {
+								"east": { "texture": "#boxlid", "uv": [ 2.5, 7.0, 7.5, 8.0 ] },
+								"west": { "texture": "#boxlid", "uv": [ 2.5, 7.0, 7.5, 8.0 ] },
+								"up": { "texture": "#boxlid", "uv": [ 7.5, 0.0, 8.0, 5.0 ] },
+								"down": { "texture": "#boxlid", "uv": [ 7.5, 0.0, 8.0, 5.0 ] }
+							}
+						},
+						{
+							"name": "SouthLidWall",
+							"from": [ -0.5, -0.5, 5.0 ],
+							"to": [ 5.5, 0.5, 5.5 ],
+							"rotationOrigin": [ -0.5, -0.5, 4.5 ],
+							"faces": {
+								"north": { "texture": "#boxlid", "uv": [ 2.0, 7.0, 8.0, 8.0 ], "windMode": [-1,-1,-1,-1] },
+								"east": { "texture": "#boxlid", "uv": [ 1.5, 7.0, 2.0, 8.0 ] },
+								"south": { "texture": "#boxlid", "uv": [ 1.5, 7.0, 7.5, 8.0 ], "windMode": [-1,-1,-1,-1] },
+								"west": { "texture": "#boxlid", "uv": [ 7.5, 7.0, 8.0, 8.0 ] },
+								"up": { "texture": "#boxlid", "uv": [ 0.0, 6.0, 6.0, 6.5 ] },
+								"down": { "texture": "#boxlid", "uv": [ 0.0, 6.0, 6.0, 6.5 ] }
+							}
+						},
+						{
+							"name": "NorthLidWall",
+							"from": [ -0.5, -0.5, -0.5 ],
+							"to": [ 5.5, 0.5, 0.0 ],
+							"rotationOrigin": [ -0.5, -0.5, -0.5 ],
+							"faces": {
+								"north": { "texture": "#boxlid", "uv": [ 2.0, 7.0, 8.0, 8.0 ] },
+								"east": { "texture": "#boxlid", "uv": [ 7.5, 7.0, 8.0, 8.0 ] },
+								"south": { "texture": "#boxlid", "uv": [ 1.5, 7.0, 7.5, 8.0 ], "windMode": [-1,-1,-1,-1] },
+								"west": { "texture": "#boxlid", "uv": [ 1.5, 7.0, 2.0, 8.0 ] },
+								"up": { "texture": "#boxlid", "uv": [ 0.0, 5.5, 6.0, 6.0 ] },
+								"down": { "texture": "#boxlid", "uv": [ 0.0, 5.5, 6.0, 6.0 ] }
+							}
+						}
+					]
+				}
+			]
+		}
+	]}

@@ -1,0 +1,284 @@
+﻿[
+    {
+		ingredientPattern: "FS",
+		width: 2,
+		height: 1,
+		"shapeless": true,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-black",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:clothfragment-black",
+			quantity: 9
+		}
+	},
+	{
+		ingredientPattern: "FS",
+		width: 2,
+		height: 1,
+		"shapeless": true,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-blue",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:clothfragment-blue",
+			quantity: 9
+		}
+	},
+	{
+		ingredientPattern: "FS",
+		width: 2,
+		height: 1,
+		"shapeless": true,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-brown",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:clothfragment-brown",
+			quantity: 9
+		}
+	},
+	{
+		ingredientPattern: "FS",
+		width: 2,
+		height: 1,
+		"shapeless": true,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-gray",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:clothfragment-gray",
+			quantity: 9
+		}
+	},
+	{
+		ingredientPattern: "FS",
+		width: 2,
+		height: 1,
+		"shapeless": true,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-green",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:clothfragment-green",
+			quantity: 9
+		}
+	},
+	{
+		ingredientPattern: "FS",
+		width: 2,
+		height: 1,
+		"shapeless": true,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-orange",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:clothfragment-orange",
+			quantity: 9
+		}
+	},
+	{
+		ingredientPattern: "FS",
+		width: 2,
+		height: 1,
+		"shapeless": true,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-pink",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:clothfragment-pink",
+			quantity: 9
+		}
+	},
+	{
+		ingredientPattern: "FS",
+		width: 2,
+		height: 1,
+		"shapeless": true,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-purple",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:clothfragment-purple",
+			quantity: 9
+		}
+	},
+	{
+		ingredientPattern: "FS",
+		width: 2,
+		height: 1,
+		"shapeless": true,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-red",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:clothfragment-red",
+			quantity: 9
+		}
+	},
+	{
+		ingredientPattern: "FS",
+		width: 2,
+		height: 1,
+		"shapeless": true,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-white",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:clothfragment-white",
+			quantity: 9
+		}
+	},
+	{
+		ingredientPattern: "FS",
+		width: 2,
+		height: 1,
+		"shapeless": true,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				code: "game:cloth-yellow",
+				quantity: 1
+			},
+			"S": {
+				type: "item",
+				"code": "game:shears-*",
+				"isTool": true,
+				toolDurabilityCost: 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "gifty:clothfragment-yellow",
+			quantity: 9
+		}
+	},
+	{
+		ingredientPattern: "FFFFFFFFF",
+		width: 3,
+		height: 3,
+		ingredients: {
+			"F": { 
+				type: "item", 
+				name: "color",
+				code: "clothfragment-*",
+				quantity: 1
+			}
+		},
+		output: { 
+			type: "item", 
+			code: "game:cloth-{color}",
+			quantity: 1
+		}
+	},
+]

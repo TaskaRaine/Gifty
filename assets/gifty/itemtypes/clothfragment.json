@@ -1,0 +1,39 @@
+﻿{
+	"code": "clothfragment",
+    variantgroups: [
+		{ code:"color", states: ["black", "blue", "brown", "gray", "green", "orange", "pink", "purple", "red", "white", "yellow"] },
+	],
+	creativeinventory: { "general": ["*"], "items": ["*"], "gifty": ["*"] },
+	"attributes": {
+		handbook: {
+			groupBy: ["clothfragment-*"]
+		},
+	},
+	"shape": { "base": "item/clothfragment"},
+	"textures": {
+		"fragment": { "base": "game:block/cloth/linen/{color}" }
+	},
+	maxstacksize: 32,
+	materialDensity: 210,
+	guiTransform: {
+		rotation: { x: 92, y: -41, z: -37 },
+		origin: { x: 0.4, y: 0.15, z: 0.5 },
+		scale: 1.88
+	},
+	fpHandTransform: {
+		rotation: { x: 56, y: 0, z: 96 },
+		origin: { x: 0.6, y: 0.2, z: 0.5 }
+	},
+	tpHandTransform: {
+		translation: { x: -1, y: -1, z: -1.3 },
+		rotation: { x: -93, y: -3, z: -5 },
+		origin: { x: 0.4, y: 0.4, z: 0.4 },
+		scale: 0.43
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.3, y: 0.0, z: 0.5299 },
+		scale: 4
+	}
+}

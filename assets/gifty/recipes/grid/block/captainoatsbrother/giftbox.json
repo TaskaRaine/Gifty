@@ -1,0 +1,34 @@
+﻿[
+    {
+		ingredientPattern: "LYLMBMY Y",
+		width: 3,
+		height: 3,
+		ingredients: {
+			"B": { 
+				type: "block", 
+				code: "gifty:giftboxbase-plain",
+				quantity: 1
+			},
+			"M": {
+				"type": "item",
+				"code": "game:cloth-purple",
+				"quantity": 1
+			},
+			"Y": {
+				"type": "item",
+				"code": "gifty:clothfragment-yellow",
+				"quantity": 1
+			},
+			"L": {
+				"type": "item",
+				"code": "gifty:clothfragment-black",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "block", 
+			code: "gifty:giftboxbase-halloween_batmoon",
+			quantity: 1
+		}
+	},
+]

@@ -1,0 +1,34 @@
+﻿[
+    {
+		ingredientPattern: "TSTMBMS S",
+		width: 3,
+		height: 3,
+		ingredients: {
+			"B": { 
+				type: "block", 
+				code: "gifty:giftboxlid-plain",
+				quantity: 1
+			},
+			"M": {
+				"type": "item",
+				"code": "game:cloth-purple",
+				"quantity": 1
+			},
+			"S": {
+				"type": "item",
+				"code": "gifty:clothfragment-yellow",
+				"quantity": 1
+			},
+			"T": {
+				"type": "item",
+				"code": "gifty:clothfragment-yellow",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "block", 
+			code: "gifty:giftboxlid-halloween_batmoon",
+			quantity: 1
+		}
+	},
+]

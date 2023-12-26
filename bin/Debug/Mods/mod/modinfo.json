@@ -1,0 +1,12 @@
+﻿{
+  "type": "code",
+  "modid": "gifty",
+  "name": "Gifty",
+  "authors": ["Taska Raine"],
+  "contributors": [],
+  "description": "Gifts!",
+  "version": "1.0.0",
+  "dependencies": {
+    "game": "1.18.8-rc.1",
+  }
+}

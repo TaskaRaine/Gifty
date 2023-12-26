@@ -1,0 +1,211 @@
+﻿[
+    {
+		ingredientPattern: "WRWMBMR R",
+		width: 3,
+		height: 3,
+		ingredients: {
+			"B": { 
+				type: "block", 
+				code: "gifty:giftboxbase-plain",
+				quantity: 1
+			},
+			"M": {
+				"type": "item",
+				"code": "game:cloth-brown",
+				"quantity": 1
+			},
+			"W": {
+				"type": "item",
+				"code": "gifty:clothfragment-white",
+				"quantity": 1
+			},
+			"R": {
+				"type": "item",
+				"code": "gifty:clothfragment-red",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "block", 
+			code: "gifty:giftboxbase-christmas_meatfest",
+			quantity: 1
+		}
+	},
+	{
+		ingredientPattern: "LLLMBML L",
+		width: 3,
+		height: 3,
+		ingredients: {
+			"B": { 
+				type: "block", 
+				code: "gifty:giftboxbase-plain",
+				quantity: 1
+			},
+			"M": {
+				"type": "item",
+				"code": "game:cloth-orange",
+				"quantity": 1
+			},
+			"L": {
+				"type": "item",
+				"code": "gifty:clothfragment-blue",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "block", 
+			code: "gifty:giftboxbase-christmas_orangejam",
+			quantity: 1
+		}
+	},
+	{
+		ingredientPattern: "LLLMBML L",
+		width: 3,
+		height: 3,
+		ingredients: {
+			"B": { 
+				type: "block", 
+				code: "gifty:giftboxbase-plain",
+				quantity: 1
+			},
+			"M": {
+				"type": "item",
+				"code": "game:cloth-purple",
+				"quantity": 1
+			},
+			"L": {
+				"type": "item",
+				"code": "gifty:clothfragment-blue",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "block", 
+			code: "gifty:giftboxbase-christmas_purplejam",
+			quantity: 1
+		}
+	},
+	{
+		ingredientPattern: "LLLMBML L",
+		width: 3,
+		height: 3,
+		ingredients: {
+			"B": { 
+				type: "block", 
+				code: "gifty:giftboxbase-plain",
+				quantity: 1
+			},
+			"M": {
+				"type": "item",
+				"code": "game:cloth-red",
+				"quantity": 1
+			},
+			"L": {
+				"type": "item",
+				"code": "gifty:clothfragment-blue",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "block", 
+			code: "gifty:giftboxbase-christmas_redjam",
+			quantity: 1
+		}
+	},
+	{
+		ingredientPattern: "WLWMBML L",
+		width: 3,
+		height: 3,
+		ingredients: {
+			"B": { 
+				type: "block", 
+				code: "gifty:giftboxbase-plain",
+				quantity: 1
+			},
+			"M": {
+				"type": "item",
+				"code": "game:cloth-gray",
+				"quantity": 1
+			},
+			"W": {
+				"type": "item",
+				"code": "gifty:clothfragment-white",
+				"quantity": 1
+			},
+			"L": {
+				"type": "item",
+				"code": "gifty:clothfragment-black",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "block", 
+			code: "gifty:giftboxbase-halloween_cloth",
+			quantity: 1
+		}
+	},
+	{
+		ingredientPattern: "WLWMBML L",
+		width: 3,
+		height: 3,
+		ingredients: {
+			"B": { 
+				type: "block", 
+				code: "gifty:giftboxbase-plain",
+				quantity: 1
+			},
+			"M": {
+				"type": "item",
+				"code": "game:cloth-gray",
+				"quantity": 1
+			},
+			"W": {
+				"type": "item",
+				"code": "gifty:clothfragment-white",
+				"quantity": 1
+			},
+			"L": {
+				"type": "item",
+				"code": "gifty:clothfragment-black",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "block", 
+			code: "gifty:giftboxbase-halloween_cloth",
+			quantity: 1
+		}
+	},
+	{
+		ingredientPattern: "YPYMBMP P",
+		width: 3,
+		height: 3,
+		ingredients: {
+			"B": { 
+				type: "block", 
+				code: "gifty:giftboxbase-plain",
+				quantity: 1
+			},
+			"M": {
+				"type": "item",
+				"code": "game:cloth-black",
+				"quantity": 1
+			},
+			"Y": {
+				"type": "item",
+				"code": "gifty:clothfragment-yellow",
+				"quantity": 1
+			},
+			"P": {
+				"type": "item",
+				"code": "gifty:clothfragment-purple",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "block", 
+			code: "gifty:giftboxbase-halloween_pixelportal",
+			quantity: 1
+		}
+	}
+]

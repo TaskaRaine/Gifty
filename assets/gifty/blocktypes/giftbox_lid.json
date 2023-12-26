@@ -1,0 +1,63 @@
+﻿{
+	"code": "giftboxlid",
+	variantgroups: [
+		{ code:"design", states: ["plain",
+								  "christmas_meatfest", "christmas_orangejam", "christmas_purplejam", "christmas_redjam", "halloween_cloth", "halloween_pixelportal", 
+								  "halloween_batmoon"] },
+	],
+	creativeinventory: { "general": ["*"], "decorative": ["*"], "gifty": ["*"] },
+	"attributes": {
+		handbook: {
+			groupBy: ["giftboxlid-*"]
+		},
+	},
+	"behaviors": [
+		{ name: "GroundStorable", properties: { layout: 'Quadrants', collisionBox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.4375, z2: 1 }, "placeRemoveSound": "gifty:sounds/paperdrop" } },
+		{ name: "Unplaceable", "__comment": "The ground storable obsoletes this being a block. Should be an item, but is kept a block for backwards compatibility" }, 
+		{ name: "RightClickPickup"},
+		{ "name": "GCollectibleBehaviorConvertToLiddedGift" }
+	],
+	"shape": { "base": "block/giftbox_lid_modified"},
+	"texturesByType": {
+		"@giftboxlid-(plain)": {
+			"boxlid": { "base": "gifty:block/giftbox/taska/{design}"}
+		},
+		"@giftboxlid-(christmas_meatfest|christmas_orangejam|christmas_purplejam|christmas_redjam|halloween_cloth|halloween_pixelportal)": {
+            "boxlid": { base: "gifty:block/giftbox/captainoats/{design}" }
+        },
+		"@giftboxlid-(halloween_batmoon)": {
+            "boxlid": { base: "gifty:block/giftbox/captainoatsbrother/{design}" }
+        }
+	},
+	heldTpIdleAnimation: "holdbothhands",
+	heldTpUseAnimation: "twohandplaceblock",
+	replaceable: 400,
+	resistance: 1.5,
+	maxStackSize: 16,
+	lightAbsorption: 0,
+	sideopaque: {
+		all: false
+	},
+	sidesolid: {
+		all: false
+	},
+	collisionbox: { x1: 0.28, y1: 0, z1: 0.28, x2: 0.72, y2: 0.35, z2: 0.72 },
+	selectionbox: { x1: 0.28, y1: 0, z1: 0.28, x2: 0.72, y2: 0.35, z2: 0.72 },
+	guiTransform: {
+		origin: { x: 0.5, y: 0.2, z: 0.5 },
+		scale: 2
+	},
+	groundTransform: {
+		scale: 3
+	},
+	fpHandTransform: {
+		translation: { x: 0, y: 0.25, z: 0.5 },
+		scale: 2
+	},
+	tpHandTransform: {
+		translation: { x: -0.67, y: 0.06, z: -0.5 },
+		rotation: { x: -52, y: 20, z: -110 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 0.76
+	}
+}

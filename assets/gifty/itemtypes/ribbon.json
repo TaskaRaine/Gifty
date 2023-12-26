@@ -1,0 +1,48 @@
+﻿{
+    "code": "ribbon",
+    variantgroups: [
+		{ code:"color", states: ["black", "blue", "brown", "gray", "green", "orange", "pink", "purple", "red", "white", "yellow"] },
+	],
+	attributes: {
+		displaycaseable: true, 
+		shelvable: true,
+		onDisplayTransform: {
+			rotation: { x: 0, y: -90, z: 0 },
+			origin: { x: 0.5, y: 0, z: 0.5 },
+			scale: 0.55
+		},
+		handbook: {
+			groupBy: ["ribbon-*"]
+		},
+	},
+	creativeinventory: { "general": ["*"], "items": ["*"], "gifty": ["*"] },
+	"behaviors": [{"name": "GCollectibleBehaviorConvertToWrappedGift"}],
+	"shape": { "base": "item/ribbon"},
+	"textures": {
+		"ribbon": { "base": "game:block/cloth/linen/{color}" },
+		"wood": { "base": "game:block/wood/debarked/oak"}
+	},
+	maxstacksize: 32,
+	materialDensity: 210,
+	guiTransform: {
+		rotation: { x: -117, y: -14, z: -51 },
+		origin: { x: 0.5, y: 0.15, z: 0.5 },
+		scale: 2.66
+	},
+	fpHandTransform: {
+		rotation: { x: 109, y: 89, z: -42 },
+		origin: { x: 0.6, y: 0.3, z: 0.5 },
+		scale: 1.48
+	},
+	tpHandTransform: {
+		translation: { x: -1, y: -1, z: -1.3 },
+		rotation: { x: -93, y: -3, z: -5 },
+		scale: 0.51
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.3, y: 0.0, z: 0.5299 },
+		scale: 4
+	}
+}

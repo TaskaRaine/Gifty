@@ -1,0 +1,73 @@
+﻿{
+    "code": "giftbox",
+	"classByType": { 
+		"*-noribbon": "GBlockGiftBoxNoRibbon",
+		"*-ribbon": "GBlockGiftBoxRibbon"
+	},
+	"entityClass": "GBlockEntityGiftBox",
+	variantgroups: [
+		{ code:"ribbon", states: ["noribbon", "ribbon"] },
+	],
+	"behaviorsByType": {
+		"*-noribbon": [{name: "GBlockBehaviorContainerAllowRibbonInteract"}]
+	},
+	entityBehaviorsByType: {
+		"*-noribbon": [{ name: "Animatable" }]	
+	},
+	"attributesByType": {
+		"*-noribbon": {
+			inventoryClassName: "barkbasket",
+			openSound: "game:sounds/block/basketopen",
+			closeSound: "game:sounds/block/basketclose",
+			drop: true,
+			quantitySlots: 1,
+			dialogTitleLangCode: "giftboxcontents",
+			storageType: 189,
+			retrieveOnly: false,
+		}
+	},
+    "shapeByType": {
+		"*-noribbon":{ 
+			"base": "block/giftbox_lidded_modified"
+		},
+		"*-ribbon": {
+			"base": "block/giftbox_lidded_ribbon_modified_smallribbon"
+		}
+    },
+	"textures": {
+		"boxlid": { base: "game:block/christmas/present/dogwoodrose" },
+		"boxbase": { base: "game:block/christmas/present/dogwoodrose" },
+		"ribbon": { base: "game:block/christmas/present/dogwoodrose" }
+	},
+    heldTpIdleAnimation: "holdbothhands",
+	heldTpUseAnimation: "twohandplaceblock",
+    replaceable: 400,
+	resistance: 1.5,
+	maxStackSize: 1,
+	lightAbsorption: 0,
+	sideopaque: {
+		all: false
+	},
+	sidesolid: {
+		all: false
+	},
+	collisionbox: { x1: 0.28, y1: 0, z1: 0.28, x2: 0.72, y2: 0.35, z2: 0.72 },
+	selectionbox: { x1: 0.28, y1: 0, z1: 0.28, x2: 0.72, y2: 0.35, z2: 0.72 },
+	guiTransform: {
+		origin: { x: 0.5, y: 0.2, z: 0.5 },
+		scale: 2
+	},
+	groundTransform: {
+		scale: 3
+	},
+	fpHandTransform: {
+		translation: { x: 0, y: 0.25, z: 0.5 },
+		scale: 2
+	},
+	tpHandTransform: {
+		translation: { x: -0.67, y: 0.06, z: -0.5 },
+		rotation: { x: -52, y: 20, z: -110 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 0.76
+	}
+}
