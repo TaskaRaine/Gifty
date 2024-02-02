@@ -1,7 +1,9 @@
 ﻿using Gifty.BlockEntities;
+using Gifty.Items;
 using Gifty.Utility;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -9,6 +11,7 @@ using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 using Vintagestory.GameContent;
+using static Gifty.BlockEntities.BlockEntityGiftBox;
 
 namespace Gifty.Blocks
 {
@@ -44,6 +47,7 @@ namespace Gifty.Blocks
         };
 
         public Size2i AtlasSize => Capi.BlockTextureAtlas.Size;
+        public BlockEntityGiftBox GiftBoxEntity { get; set; }
 
         public override void OnLoaded(ICoreAPI api)
         {
@@ -60,9 +64,27 @@ namespace Gifty.Blocks
             string basetype = GiftTextures["boxbase"].ToString().Split('/').Last();
 
             stringBuilder.Append(base.GetPlacedBlockInfo(world, pos, forPlayer));
-            stringBuilder.Append("\n");
-            stringBuilder.AppendLine("<font color=\"#99c9f9\"><i>" + Lang.Get("gifty:block-giftboxlid-" + lidType) + Lang.Get("gifty:designedby", GGiftBoxArtists.GetGiftBoxArtist(lidType)) + "</i></font>");
-            stringBuilder.AppendLine("<font color=\"#99c9f9\"><i>" + Lang.Get("gifty:block-giftboxbase-" + basetype) + Lang.Get("gifty:designedby", GGiftBoxArtists.GetGiftBoxArtist(basetype)) + "</i></font>");
+
+            if(GiftBoxEntity != null)
+            {
+                if(!string.IsNullOrEmpty(GiftBoxEntity.GiftCard.Recipient))
+                {
+                    stringBuilder.Append(GiftBoxEntity.GiftCard.Recipient);
+                    stringBuilder.Append("\n");
+                }
+                if(!string.IsNullOrEmpty(GiftBoxEntity.GiftCard.Message))
+                {
+                    stringBuilder.Append(GiftBoxEntity.GiftCard.Message);
+                    stringBuilder.Append("\n");
+                }
+                if(!string.IsNullOrEmpty(GiftBoxEntity.GiftCard.Gifter))
+                {
+                    stringBuilder.Append(GiftBoxEntity.GiftCard.Gifter);
+                    stringBuilder.Append("\n");
+                }
+            }
+
+            AppendArtistCredits(ref stringBuilder, lidType, basetype);
 
             return stringBuilder.ToString();
         }
@@ -71,11 +93,25 @@ namespace Gifty.Blocks
             base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
 
             string lidType = inSlot.Itemstack.Attributes["boxlid"].ToString().Split('/').Last();
-            string basetype = inSlot.Itemstack.Attributes["boxlid"].ToString().Split('/').Last();
+            string basetype = inSlot.Itemstack.Attributes["boxbase"].ToString().Split('/').Last();
 
-            dsc.Append("\n");
-            dsc.AppendLine("<font color=\"#99c9f9\"><i>" + Lang.Get("gifty:block-giftboxlid-" + lidType) + Lang.Get("gifty:designedby", GGiftBoxArtists.GetGiftBoxArtist(lidType)) + "</i></font>");
-            dsc.AppendLine("<font color=\"#99c9f9\"><i>" + Lang.Get("gifty:block-giftboxbase-" + basetype) + Lang.Get("gifty:designedby", GGiftBoxArtists.GetGiftBoxArtist(basetype)) + "</i></font>");
+            if (inSlot.Itemstack.Attributes.HasAttribute("recipient") && inSlot.Itemstack.Attributes["recipient"].ToString() != string.Empty)
+            {
+                dsc.Append(inSlot.Itemstack.Attributes["recipient"].ToString());
+                dsc.Append("\n");
+            }
+            if (inSlot.Itemstack.Attributes.HasAttribute("message") && inSlot.Itemstack.Attributes["message"].ToString() != string.Empty)
+            {
+                dsc.Append(inSlot.Itemstack.Attributes["message"].ToString());
+                dsc.Append("\n");
+            }
+            if (inSlot.Itemstack.Attributes.HasAttribute("gifter") && inSlot.Itemstack.Attributes["gifter"].ToString() != string.Empty)
+            {
+                dsc.Append(inSlot.Itemstack.Attributes["gifter"].ToString());
+                dsc.Append("\n");
+            }
+
+            AppendArtistCredits(ref dsc, lidType, basetype);
         }
         public override void OnBeforeRender(ICoreClientAPI capi, ItemStack itemstack, EnumItemRenderTarget target, ref ItemRenderInfo renderinfo)
         {
@@ -86,18 +122,18 @@ namespace Gifty.Blocks
             GiftTextures["boxlid"] = new AssetLocation(itemstack.Attributes["boxlid"].ToString());
             GiftTextures["ribbon"] = new AssetLocation(itemstack.Attributes["ribbon"].ToString());
 
-            if (!giftboxMeshRefs.TryGetValue(cacheKey, out renderinfo.ModelRef))
+            if (!giftboxMeshRefs.TryGetValue(cacheKey, out renderinfo.ModelRef.meshrefs[0]))
             {
                 MeshData mesh = GenMesh();
-                giftboxMeshRefs[cacheKey] = renderinfo.ModelRef = capi.Render.UploadMesh(mesh);
+                giftboxMeshRefs[cacheKey] = renderinfo.ModelRef.meshrefs[0] = capi.Render.UploadMesh(mesh);
             }
             base.OnBeforeRender(capi, itemstack, target, ref renderinfo);
         }
         public override int GetRandomColor(ICoreClientAPI capi, BlockPos pos, BlockFacing facing, int rndIndex = -1)
         {
-            if (capi.World.BlockAccessor.GetBlockEntity(pos) is BlockEntityGiftBox giftboxEntity)
+            if (GiftBoxEntity != null)
             {
-                return capi.BlockTextureAtlas.GetRandomColor(giftboxEntity["boxbase"], -1);
+                return capi.BlockTextureAtlas.GetRandomColor(GiftBoxEntity["boxbase"], -1);
             }
 
             return base.GetRandomColor(capi, pos, facing, rndIndex);
@@ -110,15 +146,46 @@ namespace Gifty.Blocks
             giftBoxDrop.Attributes.SetString("boxlid", GiftTextures["boxlid"].ToString());
             giftBoxDrop.Attributes.SetString("ribbon", GiftTextures["ribbon"].ToString());
 
+            if (GiftBoxEntity != null)
+            {
+                giftBoxDrop.Attributes.SetItemstack("contents", GiftBoxEntity.Inventory.FirstNonEmptySlot?.Itemstack);
+
+                if (!GiftBoxEntity.GiftCard.Equals(default(BlockEntityGiftBox.GiftCardProperties)))
+                {
+                    giftBoxDrop.Attributes.SetString("recipient", GiftBoxEntity.GiftCard.Recipient);
+                    giftBoxDrop.Attributes.SetString("message", GiftBoxEntity.GiftCard.Message);
+                    giftBoxDrop.Attributes.SetString("gifter", GiftBoxEntity.GiftCard.Gifter);
+                }
+            }
+
             return new ItemStack[] { giftBoxDrop };
+        }
+        public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
+        {
+            if (byPlayer.InventoryManager.ActiveHotbarSlot.Empty)
+                return base.OnBlockInteractStart(world, byPlayer, blockSel);
+
+            ItemSlot giftCardSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
+
+            if(giftCardSlot.Itemstack.Collectible is ItemGiftCard)
+                if (giftCardSlot.Itemstack.Collectible.Code == giftCardSlot.Itemstack.Collectible.CodeWithVariant("state", "signed"))
+                {
+                    if (GiftBoxEntity != null)
+                    {
+                        if(GiftBoxEntity.GiftCard.Equals(default(GiftCardProperties)) || GiftyUtilityMethods.PlayerCanInteractAs(byPlayer.PlayerName, GiftBoxEntity.GiftCard.Recipient) || GiftyUtilityMethods.PlayerCanInteractAs(byPlayer.PlayerName, GiftBoxEntity.GiftCard.Gifter))
+                        {
+                            GiftBoxEntity.GiftCard = new BlockEntityGiftBox.GiftCardProperties(giftCardSlot.Itemstack.Attributes["recipient"].ToString(), giftCardSlot.Itemstack.Attributes["message"].ToString(), giftCardSlot.Itemstack.Attributes["gifter"].ToString());
+
+                            giftCardSlot.TakeOut(1);
+                            return true;
+                        }
+                    }
+                }
+
+            return base.OnBlockInteractStart(world, byPlayer, blockSel);
         }
         public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1)
         {
-            if (world.BlockAccessor.GetBlockEntity(pos) is BlockEntityGiftBox giftboxEntity)
-            {
-                giftboxEntity.OnBlockBroken(byPlayer);
-            }
-
             UnloadMeshReferences();
 
             base.OnBlockBroken(world, pos, byPlayer, dropQuantityMultiplier);
@@ -146,6 +213,12 @@ namespace Gifty.Blocks
                     api.ObjectCache.Remove(cacheKey);
                 }
             }
+        }
+        private void AppendArtistCredits(ref StringBuilder stringBuilder, string lidType, string baseType)
+        {
+            stringBuilder.Append("\n");
+            stringBuilder.AppendLine("<font color=\"#99c9f9\"><i>" + Lang.Get("gifty:block-giftboxlid-" + lidType) + Lang.Get("gifty:blockinfo-designedby", GGiftBoxArtists.GetGiftBoxArtist(lidType)) + "</i></font>");
+            stringBuilder.AppendLine("<font color=\"#99c9f9\"><i>" + Lang.Get("gifty:block-giftboxbase-" + baseType) + Lang.Get("gifty:blockinfo-designedby", GGiftBoxArtists.GetGiftBoxArtist(baseType)) + "</i></font>");
         }
     }
 }

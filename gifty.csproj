@@ -40,38 +40,21 @@
       <HintPath>$(VINTAGE_STORY)/Lib/0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="cairo-sharp">
+      <HintPath>$(VINTAGE_STORY)/Lib/cairo-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>$(VINTAGE_STORY)/Lib/protobuf-net.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="assets\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Remove="assets\gifty\blocktypes\giftbox.json" />
-    <None Remove="assets\gifty\blocktypes\giftbox_base.json" />
-    <None Remove="assets\gifty\blocktypes\giftbox_lid.json" />
-    <None Remove="assets\gifty\itemtypes\clothfragment.json" />
-    <None Remove="assets\gifty\itemtypes\paintbrush.json" />
-    <None Remove="assets\gifty\itemtypes\ribbon.json" />
-    <None Remove="assets\gifty\lang\en.json" />
-    <None Remove="assets\gifty\patches\block\giftbox.json" />
-    <None Remove="assets\gifty\recipes\grid\block\captainoatsbrother\giftbox.json" />
-    <None Remove="assets\gifty\recipes\grid\block\captainoatsbrother\lid.json" />
-    <None Remove="assets\gifty\recipes\grid\block\captainoats\giftbox.json" />
-    <None Remove="assets\gifty\recipes\grid\block\captainoats\lid.json" />
-    <None Remove="assets\gifty\recipes\grid\block\taska\giftbox.json" />
-    <None Remove="assets\gifty\recipes\grid\block\taska\lid.json" />
-    <None Remove="assets\gifty\recipes\grid\item\clothfragment.json" />
-    <None Remove="assets\gifty\recipes\grid\item\ribbon.json" />
-    <None Remove="assets\gifty\sounds\paperdrop.ogg" />
-    <None Remove="modinfo.json" />
+    <None Remove="assets\gifty\sounds\newcrumple.ogg" />
     <Content Include="modinfo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="assets\gifty\textures\block\giftbox\taska\" />
-    <Folder Include="assets\gifty\textures\item\" />
-  </ItemGroup>
-
 </Project>

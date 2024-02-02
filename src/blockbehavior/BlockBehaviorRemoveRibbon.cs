@@ -13,7 +13,7 @@ namespace Gifty.BlockBehaviors
         }
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel, ref EnumHandling handling)
         {
-            if (byPlayer is not EntityPlayer || !byPlayer.Entity.Controls.Sneak || !byPlayer.InventoryManager.ActiveHotbarSlot.Empty)
+            if (byPlayer is not EntityPlayer || !byPlayer.Entity.Controls.CtrlKey || !byPlayer.InventoryManager.ActiveHotbarSlot.Empty)
                 return base.OnBlockInteractStart(world, byPlayer, blockSel, ref handling);
 
             if (world.BlockAccessor.GetBlockEntity(blockSel.Position) is BlockEntityGiftBox giftBoxEntity)

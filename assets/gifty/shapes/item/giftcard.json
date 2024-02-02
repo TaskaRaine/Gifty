@@ -1,0 +1,29 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": true
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "giftcard",
+			"from": [ 6.0, 0.0, 6.5 ],
+			"to": [ 11.0, 0.25, 9.5 ],
+			"autoUnwrap": false,
+			"uv": [ 0.0, 0.0 ],
+			"rotationOrigin": [ 6.0, 0.0, 7.0 ],
+			"faces": {
+				"north": { "texture": "#card", "uv": [ 0.0, 15.0, 10.0, 16.0 ], "autoUv": false },
+				"east": { "texture": "#card", "uv": [ 0.0, 13.0, 6.0, 14.0 ], "autoUv": false },
+				"south": { "texture": "#card", "uv": [ 0.0, 14.0, 10.0, 15.0 ], "autoUv": false },
+				"west": { "texture": "#card", "uv": [ 0.0, 12.0, 6.0, 13.0 ], "autoUv": false },
+				"up": { "texture": "#card", "uv": [ 0.0, 0.0, 10.0, 6.0 ], "autoUv": false },
+				"down": { "texture": "#card", "uv": [ 0.0, 6.0, 10.0, 12.0 ], "autoUv": false }
+			}
+		}
+	]}

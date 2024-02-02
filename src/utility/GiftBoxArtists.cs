@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vintagestory.API.Config;
 
 namespace Gifty.Utility
 {
@@ -10,6 +11,7 @@ namespace Gifty.Utility
     {
         public static Dictionary<string, string> GiftboxArtists { get; private set; } = new Dictionary<string, string>()
         {
+            { "unknown", Lang.Get("gifty:blockinfo-unknownartist") },
             { "plain", "Taska" },
             { "christmas_meatfest", "CaptainOats" },
             { "christmas_orangejam", "CaptainOats" },
@@ -22,7 +24,9 @@ namespace Gifty.Utility
 
         public static string GetGiftBoxArtist(string key)
         {
-            return GiftboxArtists[key];
+            if(GiftboxArtists.ContainsKey(key))
+                return GiftboxArtists[key];
+            else return GiftboxArtists["unknown"];
         }
     }
 }

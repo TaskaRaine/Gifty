@@ -1,5 +1,6 @@
 ﻿using Gifty.BlockEntities;
 using Gifty.Blocks;
+using Gifty.Utility;
 using Vintagestory.API.Common;
 using Vintagestory.GameContent;
 
@@ -29,6 +30,13 @@ namespace Gifty.CollectibleBehaviors
                     giftBoxItemstack.Attributes.SetString("boxlid", giftBoxEntity.GiftTextures["boxlid"].ToString());
                     giftBoxItemstack.Attributes.SetString("ribbon", slot.Itemstack.Item.Textures["ribbon"].Base.ToString());
                     giftBoxItemstack.Attributes.SetItemstack("contents", giftBoxEntity.Inventory.FirstNonEmptySlot?.Itemstack);
+
+                    if (!giftBoxEntity.GiftCard.Equals(default(BlockEntityGiftBox.GiftCardProperties)))
+                    {
+                        giftBoxItemstack.Attributes.SetString("recipient", giftBoxEntity.GiftCard.Recipient);
+                        giftBoxItemstack.Attributes.SetString("message", giftBoxEntity.GiftCard.Message);
+                        giftBoxItemstack.Attributes.SetString("gifter", giftBoxEntity.GiftCard.Gifter);
+                    }
 
                     api.World.BlockAccessor.SetBlock(giftBoxRibbon.Id, blockSel.Position, giftBoxItemstack);
                     api.World.BlockAccessor.MarkBlockDirty(blockSel.Position);
