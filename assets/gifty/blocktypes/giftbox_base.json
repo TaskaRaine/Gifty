@@ -1,7 +1,7 @@
 ﻿{
     "code": "giftboxbase",
     variantgroups: [
-		{ code:"design", states: ["plain",
+		{ code:"design", states: ["plain", "christmas_ohdeer", "birthday_pawparty", "misc_starrynight", "halloween_pumpgrin",
 								  "christmas_meatfest", "christmas_orangejam", "christmas_purplejam", "christmas_redjam", "halloween_cloth", "halloween_pixelportal", 
 								  "halloween_batmoon"] },
 	],
@@ -18,7 +18,7 @@
     ],
     "shape": { "base": "block/giftbox_base_modified"},
     "texturesByType": {
-		"@giftboxbase-(plain)": {
+		"@giftboxbase-(plain|christmas_ohdeer|birthday_pawparty|misc_starrynight|halloween_pumpgrin)": {
 			"boxbase": { "base": "gifty:block/giftbox/taska/{design}"}
 		},
         "@giftboxbase-(christmas_meatfest|christmas_orangejam|christmas_purplejam|christmas_redjam|halloween_cloth|halloween_pixelportal)": {

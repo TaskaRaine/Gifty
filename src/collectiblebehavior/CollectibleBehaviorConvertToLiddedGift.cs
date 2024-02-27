@@ -3,16 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
+using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 
 namespace Gifty.CollectibleBehaviors
 {
     class GCollectibleBehaviorConvertToLiddedGift: CollectibleBehavior
     {
+        WorldInteraction[] placeLidInteraction = null;
+
         public GCollectibleBehaviorConvertToLiddedGift(CollectibleObject collObj) : base(collObj)
         {
 
+        }
+        public override void OnLoaded(ICoreAPI api)
+        {
+            base.OnLoaded(api);
+
+            placeLidInteraction = ObjectCacheUtil.GetOrCreate(api, "placeLidInteraction", () =>
+            {
+                return new WorldInteraction[] {
+                    new WorldInteraction()
+                        {
+                            ActionLangCode = "gifty:blockhelp-giftboxlid-placelid",
+                            MouseButton = EnumMouseButton.Right
+                        },
+                };
+            });
+        }
+        public override WorldInteraction[] GetHeldInteractionHelp(ItemSlot inSlot, ref EnumHandling handling)
+        {
+            return placeLidInteraction.Append(base.GetHeldInteractionHelp(inSlot, ref handling));
         }
         public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling, ref EnumHandling handling)
         {
@@ -42,6 +65,8 @@ namespace Gifty.CollectibleBehaviors
                             api.World.BlockAccessor.SetBlock(giftbox.Id, blockSel.Position, giftBoxItemstack);
                             //api.World.BlockAccessor.SpawnBlockEntity("GBlockEntityGiftBox", blockSel.Position, giftBoxItemstack);
                             api.World.BlockAccessor.MarkBlockDirty(blockSel.Position);
+
+                            player.Player.InventoryManager.ActiveHotbarSlot.TakeOut(1);
 
                             handling = EnumHandling.PreventDefault;
                             handHandling = EnumHandHandling.PreventDefault;

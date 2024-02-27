@@ -1,7 +1,7 @@
 ﻿{
 	"code": "giftboxlid",
 	variantgroups: [
-		{ code:"design", states: ["plain",
+		{ code:"design", states: ["plain", "christmas_ohdeer", "birthday_pawparty", "misc_starrynight", "halloween_pumpgrin",
 								  "christmas_meatfest", "christmas_orangejam", "christmas_purplejam", "christmas_redjam", "halloween_cloth", "halloween_pixelportal", 
 								  "halloween_batmoon"] },
 	],
@@ -19,7 +19,7 @@
 	],
 	"shape": { "base": "block/giftbox_lid_modified"},
 	"texturesByType": {
-		"@giftboxlid-(plain)": {
+		"@giftboxlid-(plain|christmas_ohdeer|birthday_pawparty|misc_starrynight|halloween_pumpgrin)": {
 			"boxlid": { "base": "gifty:block/giftbox/taska/{design}"}
 		},
 		"@giftboxlid-(christmas_meatfest|christmas_orangejam|christmas_purplejam|christmas_redjam|halloween_cloth|halloween_pixelportal)": {

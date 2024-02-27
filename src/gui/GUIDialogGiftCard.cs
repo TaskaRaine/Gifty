@@ -37,8 +37,10 @@ namespace Gifty.GUI
         protected virtual void Compose()
         {
             double lineHeight = Font.GetFontExtents().Height * Font.LineHeightMultiplier / RuntimeEnv.GUIScale;
-            ElementBounds recipientBounds = ElementBounds.Fixed(0, 0, MAX_WIDTH, 1 * lineHeight + 1);
-            ElementBounds textAreaBounds = ElementBounds.Fixed(0, 30, MAX_WIDTH, 6 * lineHeight + 1);
+            ElementBounds addressRecipientInfoBounds = ElementBounds.Fixed(0, 0, MAX_WIDTH, 1 * lineHeight + 1);
+            ElementBounds recipientBounds = ElementBounds.Fixed(0, 1 * lineHeight + 5, MAX_WIDTH, 1 * lineHeight + 1);
+            ElementBounds messageInfoBounds = ElementBounds.Fixed(0, 2 * lineHeight + 10, MAX_WIDTH, 1 * lineHeight + 1);
+            ElementBounds textAreaBounds = ElementBounds.Fixed(0, 3 * lineHeight + 15, MAX_WIDTH, 6 * lineHeight + 1);
 
             ElementBounds closeButtonBounds = ElementBounds.FixedSize(60, 30).FixedUnder(textAreaBounds, 18 + 5).WithAlignment(EnumDialogArea.LeftFixed).WithFixedPadding(10, 2);
             ElementBounds saveButtonBounds = ElementBounds.FixedSize(60, 30).FixedUnder(textAreaBounds, 18 + 5).WithAlignment(EnumDialogArea.RightFixed).WithFixedPadding(10, 2);
@@ -57,7 +59,9 @@ namespace Gifty.GUI
                 .AddShadedDialogBG(bgBounds, false, 5, 0.75f)
                 .BeginChildElements(bgBounds)
                 .AddIf(IsSigned == false)
+                    .AddRichtext(Lang.Get("gifty:guiinfo-address-recipient"), Font, addressRecipientInfoBounds, "addressRecipientInfoBox")
                     .AddTextInput(recipientBounds, null, Font, "recipientBox")
+                    .AddRichtext(Lang.Get("gifty:guiinfo-write-message"), Font, messageInfoBounds, "messageInfoBox")
                     .AddTextArea(textAreaBounds, null, Font, "messageBox")
 
                     .AddSmallButton(Lang.Get("Sign Card"), OnSignedPressed, saveButtonBounds)

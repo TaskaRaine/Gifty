@@ -16,7 +16,7 @@
 	},
 	"attributesByType": {
 		"*-noribbon": {
-			inventoryClassName: "barkbasket",
+			inventoryClassName: "giftbox",
 			openSound: "game:sounds/block/basketopen",
 			closeSound: "game:sounds/block/basketclose",
 			drop: true,

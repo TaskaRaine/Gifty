@@ -3,10 +3,10 @@
   "modid": "gifty",
   "name": "Gifty",
   "authors": ["Taska Raine"],
-  "contributors": [],
-  "description": "Gifts!",
-  "version": "1.0.0",
+  "contributors": ["CaptainOats", "CaptainOats's Brother"],
+  "description": "Give gifts, to everyone! Gift boxes designed by the community.",
+  "version": "1.0.0-rc.1",
   "dependencies": {
-    "game": "1.18.8-rc.1",
+    "game": "1.19.0",
   }
 }

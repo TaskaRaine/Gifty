@@ -1,16 +1,40 @@
 ﻿using Gifty.BlockEntities;
 using Gifty.Blocks;
 using Gifty.Utility;
+using System.Collections.Generic;
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
+using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 
 namespace Gifty.CollectibleBehaviors
 {
-    class CollectibleBehaviorConvertToWrappedGift : CollectibleBehavior
+    class GCollectibleBehaviorConvertToWrappedGift : CollectibleBehavior
     {
-        public CollectibleBehaviorConvertToWrappedGift(CollectibleObject collObj) : base(collObj)
+        WorldInteraction[] wrapGiftInteraction = null;
+
+        public GCollectibleBehaviorConvertToWrappedGift(CollectibleObject collObj) : base(collObj)
         {
 
+        }
+        public override void OnLoaded(ICoreAPI api)
+        {
+            base.OnLoaded(api);
+
+            wrapGiftInteraction = ObjectCacheUtil.GetOrCreate(api, "wrapGiftInteraction", () =>
+            {
+                return new WorldInteraction[] {
+                    new WorldInteraction()
+                        {
+                            ActionLangCode = "gifty:blockhelp-giftbox-wrap",
+                            MouseButton = EnumMouseButton.Right
+                        },
+                };
+            });
+        }
+        public override WorldInteraction[] GetHeldInteractionHelp(ItemSlot inSlot, ref EnumHandling handling)
+        {
+            return wrapGiftInteraction.Append(base.GetHeldInteractionHelp(inSlot, ref handling));
         }
         public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling, ref EnumHandling handling)
         {

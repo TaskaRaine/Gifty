@@ -4,11 +4,86 @@ using Gifty.Utility;
 using Vintagestory.API.MathTools;
 using System;
 using Vintagestory.API.Common.Entities;
+using Vintagestory.API.Util;
+using Vintagestory.API.Client;
 
 namespace Gifty.Blocks
 {
     class BlockGiftBoxRibbon: BlockGiftBox
     {
+        WorldInteraction[] recipientInteractions = null;
+        WorldInteraction[] recipientNoTakeInteractions = null;
+        WorldInteraction[] gifterInteractions = null;
+
+        public override void OnLoaded(ICoreAPI api)
+        {
+            base.OnLoaded(api);
+
+            recipientInteractions = ObjectCacheUtil.GetOrCreate(api, "giftRecipientInteractions", () =>
+            {
+                return new WorldInteraction[] {
+                    new WorldInteraction()
+                    {
+                        ActionLangCode = "gifty:blockhelp-giftbox-opengift",
+                        MouseButton = EnumMouseButton.Right,
+                        RequireFreeHand = true,
+                        HotKeyCode = "sneak"
+                    },
+                    new WorldInteraction()
+                    {
+                        ActionLangCode = "gifty:blockhelp-giftbox-take",
+                        MouseButton = EnumMouseButton.Right,
+                        RequireFreeHand = true
+                    }
+                };
+            });
+            recipientNoTakeInteractions = ObjectCacheUtil.GetOrCreate(api, "giftRecipientNoTakeInteractions", () =>
+            {
+                return new WorldInteraction[] {
+                    new WorldInteraction()
+                    {
+                        ActionLangCode = "gifty:blockhelp-giftbox-opengift",
+                        MouseButton = EnumMouseButton.Right,
+                        RequireFreeHand = true,
+                        HotKeyCode = "sneak"
+                    }
+                };
+            });
+            gifterInteractions = ObjectCacheUtil.GetOrCreate(api, "giftGifterInteractions", () =>
+            {
+                return new WorldInteraction[] {
+                    new WorldInteraction()
+                    {
+                        ActionLangCode = "gifty:blockhelp-giftbox-removeribbon",
+                        MouseButton = EnumMouseButton.Right,
+                        RequireFreeHand = true,
+                        HotKeyCodes = new string[] { "sprint", "sneak" }
+                    },
+                    new WorldInteraction()
+                    {
+                        ActionLangCode = "gifty:blockhelp-giftbox-take",
+                        MouseButton = EnumMouseButton.Right,
+                        RequireFreeHand = true
+                    }
+                };
+            });
+        }
+        public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer)
+        {
+            if (world.BlockAccessor.GetBlockEntity(selection.Position) is BlockEntityGiftBox giftBox)
+            {
+                if (giftBox.GiftCard.Equals(default(BlockEntityGiftBox.GiftCardProperties)))
+                    return recipientInteractions.Append(base.GetPlacedBlockInteractionHelp(world, selection, forPlayer));
+                else if (giftBox.GiftCard.Gifter == forPlayer.PlayerName && giftBox.GiftCard.Recipient == forPlayer.PlayerName)
+                    return recipientNoTakeInteractions.Append(gifterInteractions).Append(base.GetPlacedBlockInteractionHelp(world, selection, forPlayer));
+                else if (giftBox.GiftCard.Recipient == forPlayer.PlayerName)
+                    return recipientInteractions.Append(base.GetPlacedBlockInteractionHelp(world, selection, forPlayer));
+                else if (giftBox.GiftCard.Gifter == forPlayer.PlayerName)
+                    return gifterInteractions.Append(base.GetPlacedBlockInteractionHelp(world, selection, forPlayer));
+            }
+            
+            return base.GetPlacedBlockInteractionHelp(world, selection, forPlayer);
+        }
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
             if (world.BlockAccessor.GetBlockEntity(blockSel.Position) is BlockEntityGiftBox giftboxEntity)
@@ -40,14 +115,14 @@ namespace Gifty.Blocks
                     }
                     else
                     {
-                        if (GiftyUtilityMethods.PlayerCanInteractAs(byPlayer.PlayerName, giftboxEntity.GiftCard.Recipient))
+                        if (!byPlayer.Entity.Controls.Sprint && GiftyUtilityMethods.PlayerCanInteractAs(byPlayer.PlayerName, giftboxEntity.GiftCard.Recipient))
                         {
                             if(api.Side == EnumAppSide.Client)
                                 giftboxEntity.PlayOpenSound();
 
                             return true;
                         }
-                        else if (byPlayer.PlayerName == giftboxEntity.GiftCard.Gifter)
+                        else if (byPlayer.Entity.Controls.Sprint && GiftyUtilityMethods.PlayerCanInteractAs(byPlayer.PlayerName, giftboxEntity.GiftCard.Gifter))
                         {
                             Block giftBox = world.BlockAccessor.GetBlock(new AssetLocation("gifty", "giftbox-noribbon"));
 
@@ -80,14 +155,20 @@ namespace Gifty.Blocks
             {
                 if (GiftyUtilityMethods.PlayerCanInteractAs(byPlayer.PlayerName, giftboxEntity.GiftCard.Recipient))
                 {
-                    return giftboxEntity.OpenGift(secondsUsed, blockSel.Position);
+                    return giftboxEntity.OpenGift(secondsUsed, byPlayer, blockSel.Position);
                 }
             }
                 return base.OnBlockInteractStep(secondsUsed, world, byPlayer, blockSel);
         }
         public override void OnBlockInteractStop(float secondsUsed, IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
-            world.BlockAccessor.BreakBlock(blockSel.Position, byPlayer, 0);
+            if (world.BlockAccessor.GetBlockEntity(blockSel.Position) is BlockEntityGiftBox giftboxEntity)
+            {
+                if (GiftyUtilityMethods.PlayerCanInteractAs(byPlayer.PlayerName, giftboxEntity.GiftCard.Recipient))
+                {
+                    giftboxEntity.BreakGift(secondsUsed, byPlayer, blockSel.Position);
+                }
+            }
         }
         public override ItemStack[] GetDrops(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1)
         {

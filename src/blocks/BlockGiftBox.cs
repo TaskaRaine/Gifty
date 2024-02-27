@@ -15,7 +15,7 @@ using static Gifty.BlockEntities.BlockEntityGiftBox;
 
 namespace Gifty.Blocks
 {
-    class BlockGiftBox: Block, ITexPositionSource
+    class BlockGiftBox : Block, ITexPositionSource
     {
         public TextureAtlasPosition this[string textureCode]
         {
@@ -27,7 +27,7 @@ namespace Gifty.Blocks
                 if (GiftTextures.ContainsKey(textureCode))
                     texturePath = GiftTextures.Get(textureCode);
 
-                if(texturePath == null)
+                if (texturePath == null)
                     texturePath = new AssetLocation("game", "unknown");
 
                 Capi.BlockTextureAtlas.GetOrInsertTexture(texturePath, out _, out texpos);
@@ -65,21 +65,21 @@ namespace Gifty.Blocks
 
             stringBuilder.Append(base.GetPlacedBlockInfo(world, pos, forPlayer));
 
-            if(GiftBoxEntity != null)
+            if (GiftBoxEntity != null)
             {
-                if(!string.IsNullOrEmpty(GiftBoxEntity.GiftCard.Recipient))
+                if (!string.IsNullOrEmpty(GiftBoxEntity.GiftCard.Recipient))
                 {
                     stringBuilder.Append(GiftBoxEntity.GiftCard.Recipient);
                     stringBuilder.Append("\n");
                 }
-                if(!string.IsNullOrEmpty(GiftBoxEntity.GiftCard.Message))
+                if (!string.IsNullOrEmpty(GiftBoxEntity.GiftCard.Message))
                 {
                     stringBuilder.Append(GiftBoxEntity.GiftCard.Message);
                     stringBuilder.Append("\n");
                 }
-                if(!string.IsNullOrEmpty(GiftBoxEntity.GiftCard.Gifter))
+                if (!string.IsNullOrEmpty(GiftBoxEntity.GiftCard.Gifter))
                 {
-                    stringBuilder.Append(GiftBoxEntity.GiftCard.Gifter);
+                    stringBuilder.Append(Lang.Get("gifty:blockinfo-giftcardfrom") + GiftBoxEntity.GiftCard.Gifter);
                     stringBuilder.Append("\n");
                 }
             }
@@ -115,6 +115,9 @@ namespace Gifty.Blocks
         }
         public override void OnBeforeRender(ICoreClientAPI capi, ItemStack itemstack, EnumItemRenderTarget target, ref ItemRenderInfo renderinfo)
         {
+            if (itemstack.Attributes == null || itemstack.Attributes.Count == 0)
+                return;
+
             string cacheKey = "giftboxMeshRefs" + Code.Domain + FirstCodePart();
             Dictionary<string, MeshRef> giftboxMeshRefs = ObjectCacheUtil.GetOrCreate(capi, cacheKey, () => new Dictionary<string, MeshRef>());
 
@@ -140,6 +143,9 @@ namespace Gifty.Blocks
         }
         public override ItemStack[] GetDrops(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1)
         {
+            if (dropQuantityMultiplier == 0)
+                return null;
+
             ItemStack giftBoxDrop = new ItemStack(this, 1);
 
             giftBoxDrop.Attributes.SetString("boxbase", GiftTextures["boxbase"].ToString());

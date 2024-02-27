@@ -13,6 +13,10 @@ namespace Gifty.Utility
         {
             { "unknown", Lang.Get("gifty:blockinfo-unknownartist") },
             { "plain", "Taska" },
+            { "christmas_ohdeer", "Taska" },
+            { "birthday_pawparty", "Taska" },
+            { "misc_starrynight", "Taska" },
+            { "halloween_pumpgrin", "Taska" },
             { "christmas_meatfest", "CaptainOats" },
             { "christmas_orangejam", "CaptainOats" },
             { "christmas_purplejam", "CaptainOats" },

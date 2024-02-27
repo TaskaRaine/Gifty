@@ -1,6 +1,6 @@
 ﻿[
     {
-		ingredientPattern: "TSTMBMS S",
+		ingredientPattern: "S SMBMTST",
 		width: 3,
 		height: 3,
 		ingredients: {
@@ -32,7 +32,7 @@
 		}
 	},
 	{
-		ingredientPattern: "TSTMBMS S",
+		ingredientPattern: "S SMBMTST",
 		width: 3,
 		height: 3,
 		ingredients: {
@@ -64,7 +64,7 @@
 		}
 	},
 	{
-		ingredientPattern: "TSTMBMS S",
+		ingredientPattern: "S SMBMTST",
 		width: 3,
 		height: 3,
 		ingredients: {
@@ -96,7 +96,7 @@
 		}
 	},
 	{
-		ingredientPattern: "TSTMBMS S",
+		ingredientPattern: "S SMBMTST",
 		width: 3,
 		height: 3,
 		ingredients: {
@@ -128,7 +128,7 @@
 		}
 	},
 	{
-		ingredientPattern: "TSTMBMS S",
+		ingredientPattern: "S SMBMTST",
 		width: 3,
 		height: 3,
 		ingredients: {
@@ -160,7 +160,7 @@
 		}
 	},
 	{
-		ingredientPattern: "TSTMBMS S",
+		ingredientPattern: "S SMBMTST",
 		width: 3,
 		height: 3,
 		ingredients: {

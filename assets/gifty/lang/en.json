@@ -1,22 +1,68 @@
 ﻿{
     "game:tabname-gifty": "Gifty",
+
+    "game:gifty-quickstart-guide": "Gifty",
+    "game:gifty-quickstart-title": "Gifty Guide",
+    "game:gifty-quickstart-text": 
+"<font weight='bold' align='center'>Gifty Guide</font><br>
+<font weight='bold'>Making Gifts</font>
+
+Gifts are not just a great way to brighten the day of your friends, but they're also a great way to express your individuality! The Gifty mod gives you near limitless possible combinations of gift boxes, lids, and ribbons to create the perfect gift. 
+
+To begin, you will need to craft a <a href=\'handbook://block-gifty:giftboxbase-plain\'>simple giftbox</a> and a <a href=\'handbook://block-gifty:giftboxlid-plain\'>simple lid</a>. These will be the basis for all other designs. 
+    
+Secondly, <a href=\'handbooksearch://cloth fragment\'>cloth fragments</a> and coloured cloth will be needed to customize your gift box and lid into the many designs created by the Vintage Story community. Fragments are created by clipping them out of full cloth using <a href=\'handbooksearch://shears\'>shears</a> in the crafting grid. Simply open the handbook, search for your favourite <a href=\'handbooksearch://gift box\'>gift box design</a> and follow the recipe to create something special!  
+
+Once both gift box and lid are created, place the box in-world. You will then be able to place the lid right on top. This will create a single-slot inventory that you can open, just like any other inventory. Inside, you can place any special gift(including coal) for your friends. Or nothing at all, for the memes!
+
+Now, to seal the inventory, you need a coloured <a href=\'handbooksearch://ribbon\'>ribbon</a>! With ribbon in-hand, <icon name='rightmousebutton'></icon> the gift and it will become wrapped. Now you can carry it around with you by picking it up with <icon name='rightmousebutton'></icon> and give it to your very special someone.
+
+If you want to include a message for your recipient, a <a href=\'handbook://item-gifty:giftcard-unsigned\'>gift card</a> can be used to attach one! This is also perfect for additional security. The first box can be used to address your recipient by name, for example, 'Dear Taska'. The second box can be used to write any message you like! When you hit the 'Sign Card' button your name will automatically be written to the card.
+
+With a signed gift card in hand, interact with a gift box using <icon name='rightmousebutton'></icon> to assign it. This can be done before or after it has been wrapped with ribbon. If a mistake was made, the gifter can always assign a new signed gift card.
+
+The season of giving lasts year-round with Gifty!",
+
     "game:giftboxcontents": "Gift Box Contents",
+
+    "guiinfo-address-recipient": "Gift Recipient: ",
+    "guiinfo-write-message": "Gift Message: ",
 
     "blockinfo-designedby": "<font color=\"#99c9f9\"><i>Designed By: {0}</i></font>",
     "blockinfo-unknownartist": "Unkown Artist",
+    "blockinfo-giftcardfrom": "From ",
 
-    "block-giftboxlid-plain": "Simple Lid",
+    "blockhelp-giftboxlid-placelid": "Place lid on gift box",
+    "blockhelp-giftbox-openbox": "Open gift box",
+    "blockhelp-giftbox-wrap": "Wrap with ribbon",
+    "blockhelp-giftbox-attachcard": "Attach signed gift card",
+    "blockhelp-giftbox-opengift": "Tear open gift!",
+    "blockhelp-giftbox-removeribbon": "Remove ribbon",
+    "blockhelp-giftbox-take": "Take gift",
 
-    "block-giftboxlid-christmas_meatfest": "Meatfest Lid",
-    "block-giftboxlid-christmas_orangejam": "Orange Jam Lid",
-    "block-giftboxlid-christmas_purplejam": "Purple Jam Lid",
-    "block-giftboxlid-christmas_redjam": "Red Jam Lid",
-    "block-giftboxlid-halloween_cloth": "Spooky Cloth Lid",
-    "block-giftboxlid-halloween_pixelportal": "Pixel Portal Lid",
+    "itemhelp-giftcard-readcard": "Read gift card",
+    "itemhelp-giftcard-signcard": "Sign gift card. Requires quill and ink in off-hand",
 
-    "block-giftboxlid-halloween_batmoon": "Bat Moon Lid",
+    "block-giftboxlid-plain": "Simple Gift Box Lid",
+    "block-giftboxlid-christmas_ohdeer": "Oh Deer Gift Box Lid",
+    "block-giftboxlid-birthday_pawparty": "Paw Party Gift Box Lid",
+    "block-giftboxlid-misc_starrynight": "Starry Night Gift Box Lid",
+    "block-giftboxlid-halloween_pumpgrin": "Pumpgrin Gift Box Lid",
 
-    "block-giftboxbase-plain": "Simple Box",
+    "block-giftboxlid-christmas_meatfest": "Meatfest Gift Box Lid",
+    "block-giftboxlid-christmas_orangejam": "Orange Jam Gift Box Lid",
+    "block-giftboxlid-christmas_purplejam": "Purple Jam Gift Box Lid",
+    "block-giftboxlid-christmas_redjam": "Red Jam Gift Box Lid",
+    "block-giftboxlid-halloween_cloth": "Spooky Cloth Gift Box Lid",
+    "block-giftboxlid-halloween_pixelportal": "Pixel Portal Gift Box Lid",
+
+    "block-giftboxlid-halloween_batmoon": "Bat Moon Gift Box Lid",
+
+    "block-giftboxbase-plain": "Simple Gift Box",
+    "block-giftboxbase-christmas_ohdeer": "Oh Deer Gift Box",
+    "block-giftboxbase-birthday_pawparty": "Paw Party Gift Box",
+    "block-giftboxbase-misc_starrynight": "Starry Night Gift Box",
+    "block-giftboxbase-halloween_pumpgrin": "Pumpgrin Gift Box",
 
     "block-giftboxbase-christmas_meatfest": "Meatfest Gift Box",
     "block-giftboxbase-christmas_orangejam": "Orange Jam Gift Box",
@@ -30,8 +76,8 @@
     "block-giftbox-noribbon": "Gift Box",
     "block-giftbox-ribbon": "Tied Gift Box",
 
-    "item-giftcard-unsigned": "Unsigned Card",
-    "item-giftcard-signed": "Signed Card",
+    "item-giftcard-unsigned": "Unsigned Gift Card",
+    "item-giftcard-signed": "Signed Gift Card",
 
     "item-ribbon-black": "Black Ribbon",
     "item-ribbon-blue": "Blue Ribbon",
@@ -43,5 +89,28 @@
     "item-ribbon-purple": "Purple Ribbon",
     "item-ribbon-red": "Red Ribbon",
     "item-ribbon-white": "White Ribbon",
-    "item-ribbon-yellow": "Yellow Ribbon"
+    "item-ribbon-yellow": "Yellow Ribbon",
+
+    "item-clothfragment-black": "Black Cloth Fragment",
+    "item-clothfragment-blue": "Blue Cloth Fragment",
+    "item-clothfragment-brown": "Brown Cloth Fragment",
+    "item-clothfragment-gray": "Gray Cloth Fragment",
+    "item-clothfragment-green": "Green Cloth Fragment",
+    "item-clothfragment-orange": "Orange Cloth Fragment",
+    "item-clothfragment-pink": "Pink Cloth Fragment",
+    "item-clothfragment-purple": "Purple Cloth Fragment",
+    "item-clothfragment-red": "Red Cloth Fragment",
+    "item-clothfragment-white": "White Cloth Fragment",
+    "item-clothfragment-yellow": "Yellow Cloth Fragment",
+
+    "item-paintbrush-bismuthbronze": "Bismuth Bronze Paintbrush",
+    "item-paintbrush-blackbronze": "Black Bronze Paintbrush",
+    "item-paintbrush-copper": "Copper Paintbrush",
+    "item-paintbrush-cupronickel": "Cupronickel Paintbrush",
+    "item-paintbrush-gold": "Gold Paintbrush",
+    "item-paintbrush-iron": "Iron Paintbrush",
+    "item-paintbrush-meteoriciron": "Meteoric Iron Paintbrush",
+    "item-paintbrush-silver": "Silver Paintbrush",
+    "item-paintbrush-steel": "Steel Paintbrush",
+    "item-paintbrush-tinbronze": "Tin Bronze Paintbrush"
 }

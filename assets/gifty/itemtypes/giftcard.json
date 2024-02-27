@@ -1,7 +1,7 @@
 ﻿{
     "code": "giftcard",
 	"class": "GItemGiftCard",
-    creativeinventory: { "general": ["*"], "items": ["*"], "gifty": ["*"] },
+    creativeinventory: { "general": ["*-unsigned"], "items": ["*-unsigned"], "gifty": ["*-unsigned"] },
 	variantgroups: [
 		{ code:"state", states: ["unsigned", "signed"] },
 	],
@@ -26,7 +26,7 @@
 	maxstacksize: 32,
 	guiTransform: {
 		rotation: { x: -75, y: 30, z: 0 },
-		origin: { x: 0.825, y: 2.2, z: 0 },
+		origin: { x: 0.8, y: 2, z: 0.05 },
 		scale: 3.79
 	},
 	fpHandTransform: {

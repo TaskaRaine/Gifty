@@ -9,7 +9,7 @@ namespace Gifty.CollectibleBehaviors
             base.Start(api);
 
             api.RegisterCollectibleBehaviorClass("GCollectibleBehaviorConvertToLiddedGift", typeof(GCollectibleBehaviorConvertToLiddedGift));
-            api.RegisterCollectibleBehaviorClass("GCollectibleBehaviorConvertToWrappedGift", typeof(CollectibleBehaviorConvertToWrappedGift));
+            api.RegisterCollectibleBehaviorClass("GCollectibleBehaviorConvertToWrappedGift", typeof(GCollectibleBehaviorConvertToWrappedGift));
         }
     }
 }

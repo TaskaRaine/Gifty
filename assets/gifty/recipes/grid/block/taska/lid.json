@@ -15,5 +15,133 @@
 			code: "gifty:giftboxlid-plain",
 			quantity: 1
 		}
-	}
+	},
+	{
+		ingredientPattern: "W WRBRWEW",
+		width: 3,
+		height: 3,
+		ingredients: {
+			"B": { 
+				type: "block", 
+				code: "gifty:giftboxlid-plain",
+				quantity: 1
+			},
+			"W": {
+				"type": "item",
+				"code": "gifty:clothfragment-white",
+				"quantity": 1
+			},
+			"R": {
+				"type": "item",
+				"code": "game:cloth-red",
+				"quantity": 1
+			},
+			"E": {
+				"type": "item",
+				"code": "gifty:clothfragment-brown",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "block", 
+			code: "gifty:giftboxlid-christmas_ohdeer",
+			quantity: 1
+		}
+	},
+	{
+		"ingredientPattern": "T TPBPTWT",
+		"width": 3,
+		"height": 3,
+		"ingredients": {
+			"B": { 
+				type: "block", 
+				code: "gifty:giftboxlid-plain",
+				quantity: 1
+			},
+			"W": {
+				"type": "item",
+				"code": "game:cloth-white",
+				"quantity": 1
+			},
+			"T": {
+				"type": "item",
+				"code": "gifty:clothfragment-blue",
+				"quantity": 1
+			},
+			"P": {
+				"type": "item",
+				"code": "gifty:clothfragment-pink",
+				"quantity": 1
+			}
+		},
+		output: { 
+			type: "block", 
+			code: "gifty:giftboxlid-birthday_pawparty",
+			quantity: 1
+		}
+	},
+	{
+		"ingredientPattern": "W WWBWLTL",
+		"width": 3,
+		"height": 3,
+		"ingredients": {
+			"B": { 
+				type: "block", 
+				code: "gifty:giftboxlid-plain",
+				quantity: 1
+			},
+			"W": {
+				"type": "item",
+				"code": "gifty:clothfragment-white",
+				"quantity": 1
+			},
+			"T": {
+				"type": "item",
+				"code": "game:cloth-blue",
+				"quantity": 1
+			},
+			"L": {
+				"type": "item",
+				"code": "gifty:clothfragment-black",
+				"quantity": 1
+			},
+		},
+		output: { 
+			type: "block", 
+			code: "gifty:giftboxlid-misc_starrynight",
+			quantity: 1
+		}
+	},
+	{
+		"ingredientPattern": "W WWBWLOL",
+		"width": 3,
+		"height": 3,
+		"ingredients": {
+			"B": { 
+				type: "block", 
+				code: "gifty:giftboxlid-plain",
+				quantity: 1
+			},
+			"W": {
+				"type": "item",
+				"code": "gifty:clothfragment-orange",
+				"quantity": 1
+			},
+			"O": {
+				"type": "item",
+				"code": "game:cloth-orange",
+				"quantity": 1
+			},
+			"L": {
+				"type": "item",
+				"code": "gifty:clothfragment-black",
+				"quantity": 1
+			},
+		},
+		output: { 
+			type: "block", 
+			code: "gifty:giftboxlid-halloween_pumpgrin",
+			quantity: 1
+		}
+	},
 ]

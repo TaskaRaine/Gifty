@@ -5,6 +5,7 @@ using System.Reflection.Metadata;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
+using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 
 namespace Gifty.Items
@@ -14,6 +15,9 @@ namespace Gifty.Items
     {
         const string NETWORK_CHANNEL_ID = "GiftyGiftCardChannel";
 
+        WorldInteraction[] signInteraction = null;
+        WorldInteraction[] readInteraction = null;
+
         private GUIDialogGiftCard CardGUI { get; set; }
         private GiftCardModSystem GCModSystem { get; set; }
         
@@ -21,7 +25,35 @@ namespace Gifty.Items
         {
             base.OnLoaded(api);
 
+            signInteraction = ObjectCacheUtil.GetOrCreate(api, "signCardInteraction", () =>
+            {
+                return new WorldInteraction[] {
+                    new WorldInteraction()
+                        {
+                            ActionLangCode = "gifty:itemhelp-giftcard-signcard",
+                            MouseButton = EnumMouseButton.Right
+                        },
+                };
+            });
+            readInteraction = ObjectCacheUtil.GetOrCreate(api, "readCardInteraction", () =>
+            {
+                return new WorldInteraction[] {
+                    new WorldInteraction()
+                        {
+                            ActionLangCode = "gifty:itemhelp-giftcard-readcard",
+                            MouseButton = EnumMouseButton.Right
+                        },
+                };
+            });
+
             GCModSystem = api.ModLoader.GetModSystem<GiftCardModSystem>();
+        }
+        public override WorldInteraction[] GetHeldInteractionHelp(ItemSlot inSlot)
+        {
+            if (CodeWithVariant("state", "signed") == Code)
+                return readInteraction.Append(base.GetHeldInteractionHelp(inSlot));
+            else
+                return signInteraction.Append(base.GetHeldInteractionHelp(inSlot));
         }
         public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling)
         {

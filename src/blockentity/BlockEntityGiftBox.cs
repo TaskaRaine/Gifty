@@ -78,6 +78,7 @@ namespace Gifty.BlockEntities
             if(api is  ICoreClientAPI clientAPI) {
                 InitializetGiftParticles();
                 InitializeGiftOpenSound();
+                UpdateBlockGiftTextures();
                 UpdateParticleColor();
 
                 Inventory.OnInventoryOpened += AnimateOpen;
@@ -171,7 +172,7 @@ namespace Gifty.BlockEntities
         }
         public override void OnBlockBroken(IPlayer byPlayer = null)
         {
-            Inventory.Clear();
+            Inventory.DropAll(this.Pos.ToVec3d());
 
             base.OnBlockBroken(byPlayer);
         }
@@ -189,8 +190,11 @@ namespace Gifty.BlockEntities
 
             return true;
         }
-        public bool OpenGift(float secondsUsed, BlockPos position)
+        public bool OpenGift(float secondsUsed, IPlayer byPlayer, BlockPos position)
         {
+            if (!byPlayer.Entity.Controls.Sneak)
+                return false;
+
             if (secondsUsed <= GiftOpenDuration)
             {
                 if (Api.Side == EnumAppSide.Client)
@@ -201,6 +205,13 @@ namespace Gifty.BlockEntities
                 return true;
             }
             else return false;
+        }
+        public void BreakGift(float secondsUsed, IPlayer byPlayer, BlockPos position)
+        {
+            if(secondsUsed >= GiftOpenDuration)
+            {
+                Api.World.BlockAccessor.BreakBlock(position, byPlayer, 0);
+            }
         }
         public void PlayOpenSound()
         {
