@@ -1,0 +1,123 @@
+{
+    "_comentarios-1": "Gifty v1.0.0-rc.4 || Enlace de VS ModDB: https://mods.vintagestory.at/gifty ",
+    "_comentarios-2": "Traducido por C4BR3R4 || Última Modificación: 23/04/2025 || Registro de Cambios: https://c4br3r4.es/index.php?topic=1354.0 ",
+
+    "game:tabname-gifty": "Regalos",
+
+    "game:gifty-quickstart-guide": "Regalos",
+    "game:gifty-quickstart-title": "Guía de Regalos",
+    "game:gifty-quickstart-text": 
+"<font weight='bold' align='center'>Guía de Regalos</font><br>
+<font weight='bold'>Hacer regalos</font>
+
+Los regalos no solo son una excelente manera de alegrarles el día a tus amigos, ¡sino también de expresar tu individualidad! El mod Gifty te ofrece combinaciones casi ilimitadas de cajas, tapas y lazos para crear el regalo perfecto.
+
+Para comenzar, necesitarás crear una <a href='handbook://block-gifty:giftboxbase-plain'>Caja Regalo Sencilla</a> y un <a href='handbook://block-gifty:giftboxlid-plain'>Tapa Sencilla</a>. Estos serán la base para todos los demás diseños. 
+    
+En segundo lugar, necesitarás <a href='handbooksearch://trozo de tela'>Trozos de Tela</a> de colores para personalizar la Caja Regalo y la Tapa con los numerosos diseños creados por la comunidad de Vintage Story. Los Trozos se hacen recortándolos desde la Tela completa con la <a href='handbooksearch://shears'>Tijera</a> en el Inventario de Elaboración. Simplemente abre el manual, ¡busca tu <a href='handbooksearch://Caja Regalo'>Diseño de Caja Regalo</a> favorito y sigue la receta para crear algo especial!  
+
+Una vez creada la Caja Regalo y la tapa, coloca la Caja en cualquier lugar. Podrás colocar la Tapa justo encima. Esto creará un contenedor de una sola ranura que podrás abrir, como cualquier otro inventario. Dentro, puedes colocar cualquier regalo especial (incluido Carbón) para tus amigos. ¡O nada, para los memes!
+
+Ahora, ¡debes envolver la Caja con una <a href='handbooksearch://ribbon'>Cinta</a> de color! Con la Cinta en la mano, usa <icon name='rightmousebutton'></icon> El regalo quedará envuelto. Ahora puedes llevarlo contigo cogiéndolo con <icon name='rightmousebutton'></icon> y dárselo a esa persona tan especial.
+
+Si quieres incluir un mensaje para su destinatario, ¡puedes adjuntar una <a href='handbook://item-gifty:giftcard-unsigned'>Tarjeta Regalo</a>! Esto también es perfecto para mayor seguridad. El primer campo puede usarse para dirigirse al destinatario por su nombre, por ejemplo, «Estimada Sariply». ¡La segundo campo puede usarse para escribir el mensaje que quieras! Al pulsar el botón 'Firmar Tarjeta', tu nombre se escribirá automáticamente en la Tarjeta.
+
+Con una Tarjeta Regalo firmada en la mano, interactúa con una Caja Regalo usando <icon name='rightmousebutton'></icon> para adherirla. Esto puede hacerse antes o después de envolver la Caja con Cinta. Si se cometió un error, quien la regaló siempre puede asignar una nueva Tarjeta Regalo firmada.
+
+¡Los Regalos se pueden entregar en cualquier época del año!",
+
+    "game:giftboxcontents": "Caja Regalo",
+
+    "guiinfo-address-recipient": "Destinatario: ",
+    "guiinfo-write-message": "Mensaje: ",
+
+    "blockinfo-designedby": "<font color='#99c9f9'><i>Diseñado por: {0}</i></font>",
+    "blockinfo-unknownartist": "Artista desconocido",
+    "blockinfo-giftcardfrom": "De ",
+
+    "blockhelp-giftboxlid-placelid": "Colocar la Tapa en la Caja Regalo",
+    "blockhelp-giftbox-openbox": "Abrir Caja Regalo",
+    "blockhelp-giftbox-wrap": "Envolver con Cinta",
+    "blockhelp-giftbox-attachcard": "Adjuntar Tarjeta Regalo Firmada",
+    "blockhelp-giftbox-opengift": "¡Abrir Regalo!",
+    "blockhelp-giftbox-removeribbon": "Retirar Cinta",
+    "blockhelp-giftbox-take": "Coger Regalo",
+
+    "itemhelp-giftcard-readcard": "Leer Tarjeta Regalo",
+    "itemhelp-giftcard-signcard": "Para firmar la Tarjeta de Regalo es necesario Pluma y Tinta a mano.",
+
+    "block-giftboxlid-plain": "Tapa de Caja Regalo Sencilla",
+    "block-giftboxlid-christmas_ohdeer": "Tapa de Caja Regalo Oh Ciervo",
+    "block-giftboxlid-birthday_pawparty": "Tapa de Caja Regalo Fiesta de la Patita",
+    "block-giftboxlid-misc_starrynight": "Tapa de Caja Regalo Noche Estrellada",
+    "block-giftboxlid-halloween_pumpgrin": "Tapa de Caja Regalo Sonrisa de Calabaza",
+
+    "block-giftboxlid-christmas_meatfest": "Tapa de Caja Regalo Fiesta de la Carne",
+    "block-giftboxlid-christmas_orangejam": "Tapa de Caja Regalo Mermelada Naranja",
+    "block-giftboxlid-christmas_purplejam": "Tapa de Caja Regalo Mermelada Morada",
+    "block-giftboxlid-christmas_redjam": "Tapa de Caja Regalo Mermelada Roja",
+    "block-giftboxlid-halloween_cloth": "Tapa de Caja Regalo Tela Espeluznante",
+    "block-giftboxlid-halloween_pixelportal": "Tapa de Caja Regalo Portal de Píxeles",
+
+    "block-giftboxlid-halloween_batmoon": "Tapa de Caja Regalo Luna de Murciélago",
+
+    "block-giftboxlid-misc_cloudysky": "Tapa de Caja Regalo Cielo Nublado",
+
+    "block-giftboxbase-plain": "Caja Regalo Sencilla",
+    "block-giftboxbase-christmas_ohdeer": "Caja Regalo Oh Ciervo",
+    "block-giftboxbase-birthday_pawparty": "Caja Regalo Fiesta de la Patita",
+    "block-giftboxbase-misc_starrynight": "Caja Regalo Noche Estrellada",
+    "block-giftboxbase-halloween_pumpgrin": "Caja Regalo Sonrisa de Calabaza",
+
+    "block-giftboxbase-christmas_meatfest": "Caja Regalo Fiesta de la Carne",
+    "block-giftboxbase-christmas_orangejam": "Caja Regalo Mermelada Naranja",
+    "block-giftboxbase-christmas_purplejam": "Caja Regalo Mermelada Morada",
+    "block-giftboxbase-christmas_redjam": "Caja Regalo Mermelada Roja",
+    "block-giftboxbase-halloween_cloth": "Caja Regalo Tela Espeluznante",
+    "block-giftboxbase-halloween_pixelportal": "Caja Regalo Portal de Píxeles",
+
+    "block-giftboxbase-halloween_batmoon": "Caja Regalo Luna de Murciélago",
+
+    "block-giftboxbase-misc_cloudysky": "Caja Regalo Cielo Nublado",
+
+    "block-giftbox-noribbon": "Caja Regalo",
+    "block-giftbox-ribbon": "Caja Regalo Encintada",
+
+    "item-giftcard-unsigned": "Tarjeta Regalo sin Firmar",
+    "item-giftcard-signed": "Tarjeta Regalo Firmada",
+
+    "item-ribbon-black": "Cinta Negra",
+    "item-ribbon-blue": "Cinta Azul",
+    "item-ribbon-brown": "Cinta Marrón",
+    "item-ribbon-gray": "Cinta Gris",
+    "item-ribbon-green": "Cinta Verde",
+    "item-ribbon-orange": "Cinta Naranja",
+    "item-ribbon-pink": "Cinta Rosa",
+    "item-ribbon-purple": "Cinta Morada",
+    "item-ribbon-red": "Cinta Roja",
+    "item-ribbon-white": "Cinta Blanca",
+    "item-ribbon-yellow": "Cinta Amarilla",
+
+    "item-clothfragment-black": "Trozo de Tela Negra",
+    "item-clothfragment-blue": "Trozo de Tela Azul",
+    "item-clothfragment-brown": "Trozo de Tela Marrón",
+    "item-clothfragment-gray": "Trozo de Tela Gris",
+    "item-clothfragment-green": "Trozo de Tela Verde",
+    "item-clothfragment-orange": "Trozo de Tela Naranja",
+    "item-clothfragment-pink": "Trozo de Tela Rosa",
+    "item-clothfragment-purple": "Trozo de Tela Morada",
+    "item-clothfragment-red": "Trozo de Tela Roja",
+    "item-clothfragment-white": "Trozo de Tela Blanca",
+    "item-clothfragment-yellow": "Trozo de Tela Amarilla",
+
+    "item-paintbrush-bismuthbronze": "Brocha de Bronce de Bismuto",
+    "item-paintbrush-blackbronze": "Brocha de Bronce Negro",
+    "item-paintbrush-copper": "Brocha de Cobre",
+    "item-paintbrush-cupronickel": "Brocha de Cuproníquel",
+    "item-paintbrush-gold": "Brocha de Oro",
+    "item-paintbrush-iron": "Brocha de Hierro",
+    "item-paintbrush-meteoriciron": "Brocha de Hierro Meteorítico",
+    "item-paintbrush-silver": "Brocha de Plata",
+    "item-paintbrush-steel": "Brocha de Acero",
+    "item-paintbrush-tinbronze": "Brocha de Bronce Estañado"
+}
